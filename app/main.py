@@ -5,9 +5,9 @@ def copy_file(command: str) -> None:
 
     try:
         with open(command_list[1], mode="r") as file_read:
-            file_data = file_read.read()
+            file_data = file_read.readlines()
 
         with open(command_list[2], mode="w") as file_write:
-            file_write.write(file_data)
+            file_write.write("".join(file_data))
     except FileNotFoundError:
         return
